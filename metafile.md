@@ -22,14 +22,14 @@ sra_runs_total: 6\
 \
 samples:\
   A375_rep1:\
-    cell line: A375\
-    genotype: WT\
-    treatment: no\
+    cell line: A375
+    genotype: WT
+    treatment: no
     sra_runs: [SRX22737852]\
   A375_rep1_rep2:\
-    cell line: A375\
-    genotype: WT\
-    treatment: no\
+    cell line: A375
+    genotype: WT
+    treatment: no
     sra_runs: [SRX22737853]\
   SHSY5Y_rep1:\
     cell line: SHSY5Y
