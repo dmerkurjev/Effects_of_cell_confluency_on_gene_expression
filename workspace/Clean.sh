@@ -14,23 +14,22 @@ cd "${PROJECT_DIR}/raw"
 
 
 # Group SRA run IDs by biological sample 
-T0hrrep1=(SRX22974823)   # SRX22974823
-T0hrrep2=(SRX22974824)   # SRX22974824
-T0hrCAFrep1=(SRX22974825)    # SRX22974825
-T0hrCAFrep2=(SRX22974826)    # SRX22974826
-T6hrrep1=(SRX22974827)   # SRX22974827
-T6hrrep2=(SRX22974828)   # SRX22974828
-T6hrCAFrep1=(SRX22974829)   # SRX22974829
-T6hrCAFrep2=(SRX22974820)   # SRX22974830
+A375rep1=(SRX22737852)   # SRX22737852
+A375rep2=(SRX22737853)   # SRX22737853
+SHSY5Yrep1=(SRX22737858)    # SRX22737858
+SHSY5Yrep2=(SRX22737859)    # SRX22737859
+HEK293WTrep1=(SRX22737864)   # SRX22737864
+HEK293WTrep2=(SRX22737865)   # SRX22974865
 
 # -------------------- Download & Convert --------------------
 
 # Download .sra files
-for r in "${T0hrrep1[@]}" "${T0hrrep2[@]}" "${T0hrCAFrep1[@]}" "${T0hrCAFrep1[@]}" "${T6hrrep1[@]}" "${T6hrrep2[@]}" "${T6hrCAFrep1[@]}" "${T6hrCAFrep1[@]}"; do
+for r in "${A375rep1[@]}" "${A375rep2[@]}" "${SHSY5Yrep1[@]}" "${SHSY5Yrep2[@]}" "${HEK293WTrep1[@]}" "${HEK293WTrep2[@]}"; do
   prefetch "$r"
 done
 
 # Convert to gzipped FASTQ
 
-for r in "${T0hrrep1[@]}" "${T0hrrep2[@]}" "${T0hrCAFrep1[@]}" "${T0hrCAFrep2[@]}" "${T6hrrep1[@]}" "${T6hrrep2[@]}" "${T6hrCAFrep1[@]}" "${T6hrCAFrep1[@]}"; do
+for r in "${A375rep1[@]}" "${A375rep2[@]}" "${SHSY5Yrep1[@]}" "${SHSY5Yrep2[@]}" "${HEK293WTrep1[@]}" "${HEK293WTrep2[@]}"; do
+
   fasterq-dump -e 16 -p -O . "$r"
