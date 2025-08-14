@@ -1,36 +1,34 @@
-library(GEOquery)
-library(limma)
-library(umap)
+# 1. Install and load the edgeR package
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("edgeR")
+library(edgeR)
 
-# load series and platform data from GEO
-gset <- getGEO("GSE251644", GSEMatrix =TRUE, AnnotGPL=TRUE)[[1]]
+# 2. Load your count data (replace with your actual data)
+#   Assume 'counts' is a matrix with genes as rows and samples as columns
+#   and 'group' is a vector indicating the experimental condition for each sample
+counts <- matrix(rnbinom(100*6, size=10, prob=0.5), ncol=6)
+group <- factor(c(1,1,2,2))
 
-# make proper column names to match toptable 
-fvarLabels(gset) <- make.names(fvarLabels(gset))
+# 3. Create a DGEList object
+y <- DGEList(counts=counts, group=group)
 
-# group membership for all samples
-gsms <- "undefined"
-sml <- strsplit(gsms, split="")[[1]]
+# 4. Filter low-expressed genes
+keep <- filterByExpr(y)
+y <- y[keep, , keep.lib.sizes=FALSE]
 
-# log2 transformation
-ex <- exprs(gset)
-qx <- as.numeric(quantile(ex, c(0., 0.25, 0.5, 0.75, 0.99, 1.0), na.rm=T))
-LogC <- (qx[5] > 100) ||
-          (qx[6]-qx[1] > 50 && qx[2] > 0)
-if (LogC) { ex[which(ex <= 0)] <- NaN
-  exprs(gset) <- log2(ex) }
+# 5. Normalize library sizes (TMM normalization)
+y <- calcNormFactors(y)
 
-# assign samples to groups and set up design matrix
-gs <- factor(sml)
-groups <- make.names(c("undefined"))
-levels(gs) <- groups
-gset$group <- gs
-design <- model.matrix(~group + 0, gset)
-colnames(design) <- levels(gs)
+# 6. Estimate dispersions
+y <- estimateDisp(y)
 
-gset <- gset[complete.cases(exprs(gset)), ] # skip missing values
+# 7. Perform differential expression analysis (exact test)
+et <- exactTest(y)
 
-fit <- lmFit(gset, design)  # fit linear model
+# 8. Get results and adjust p-values
+tt <- topTags(et, n=Inf)
+tt$table$padj <- p.adjust(tt$table$PValue, method="BH")
 
-# set up contrasts of interest and recalculate model coefficients
-cts <- paste(groups, c(tail(groups, -1), head(groups, 1)), sep="-")
+# 9.  Filter for significant results
+significant_genes <- tt[tt$table$padj < 0.05, ]
