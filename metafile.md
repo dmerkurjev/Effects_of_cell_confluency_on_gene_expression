@@ -7,44 +7,50 @@
 
 \f0\fs24 \cf0 paper_title:  Integrative transcriptomic and proteomic profiling of the effects of cell confluency on gene expression
 journal: Sci Data\
-publication_date: "2024-12-6"\
-doi: 10.1038/s41388-024-02973-x\
-series_accession: GSE251644\
-bioproject: PRJNA1055006\
+publication_date: "2024-06-12"\
+doi: doi: 10.1038/s41597-024-03465-z\
+series_accession: GSE249290\
+bioproject: PRJNA1048451\
 domain: rna_seq\
 organism: Homo sapiens\
 experiment_type: RNA seq\
-platform: Illumina NextSeq 500\
+platform: Illumina NextSeq 6000\
 ref_genome: GRCh38 \
-read_type: paired_end\
-sample_count: 8\
-sra_runs_total: 8\
+read_type: single_end\
+sample_count: 6\
+sra_runs_total: 6\
 \
 samples:\
-  MCF7_0hr_alone_rep1:\
-    condition: 0 hr\
-    sra_runs: [SRX22974823]\
-  MCF7_0hr_alone_rep2:\
-    condition: 0 hr\
-    sra_runs: [SRX22974824]\
-  MCF7/CAF_0hr_rep1:\
-    condition: 0 hr CAF\
-    sra_runs: [SRX22974825]\
-  MCF7/CAF_0hr_rep2:\
-    condition: 0 HR CAF\
-    sra_runs: [SRX22974826]\
-  MCF7_6hr_alone_rep1:\
-    condition: 0 hr\
-    sra_runs: [SRX22974827]\
-  MCF7_6hr_alone_rep2:\
-    condition: 0 hr\
-    sra_runs: [SRX22974828]\
-  MCF7/CAF_6hr_rep1:\
-    condition: 0 hr CAF\
-    sra_runs: [SRX22974829]\
-  MCF7/CAF_6hr_rep2:\
-    condition: 0 HR CAF\
-    sra_runs: [SRX22974830]\
+  A375_rep1:\
+    cell line: A375\
+    genotype: WT\
+    treatment: no\
+    sra_runs: [SRX22737852]\
+  A375_rep1_rep2:\
+    cell line: A375\
+    genotype: WT\
+    treatment: no\
+    sra_runs: [SRX22737853]\
+  SHSY5Y_rep1:\
+    cell line: SHSY5Y
+    genotype: WT
+    treatment: no
+    sra_runs: [SRX22737858]\
+  SHSY5Y_rep2:\
+    cell line: SHSY5Y
+    genotype: WT
+    treatment: no
+    sra_runs: [SRX22737859]\
+  HEK293_rep1:\
+	  cell line: HEK293
+    genotype: WT
+    treatment: no
+    sra_runs: [SRX22737864]\
+  HEK293_rep2:\
+	  cell line: HEK293
+    genotype: WT
+    treatment: no
+    sra_runs: [SRX22737864]\
 \
 paths:\
   fastq: fastq/\
