@@ -1,6 +1,6 @@
 MCF7 RNA-Seq Analysis — Preprocessing & Analysis
 
-This repository contains an end-to-end workflow for RNA-seq analysis of lncRNAs results in tight lncRNA–target couplings. This is an analysis of a gene expression profiling (RNA-seq) and differentail genes expression analyses of MCF-7 cells following estrogen stimulation.
+This repository contains an end-to-end workflow for RNA-seq analysis in order to study the impact of cell confluency on gene expression. The focus was on Argonaute (AGO) protein dynamics and associated gene and protein expression in HEK293, A375, and SHSY5Y cell lines.
 
 It includes two main components:
 
@@ -10,23 +10,19 @@ Analysis (Differential_expression.sh) Performs differential expression analysis 
 
 Data
 
-SRA BioProject: PRJNA1055006 Gene expression profiling (RNA-seq) and differentail genes expression analyses of MCF-7 cells following estrogen stimulation (after 6 hours) either alone or precultured in transwells with CAFs (for 48 hours). MCF-7 cells alone and without estrogen stimulation is the control condition.
+SRA BioProject: PRJNA1048451 Gene expression profiling of subconfluent and confluent A375, SHSY5Y and HEK293 cells via RNA sequencing in 3 biological replicates, and carried out differential expression analysis between subconfluent and confluent cells of respective cell line.
 
-Sample 1: GSM7984517 (SRX22974823) cell line: MCF7 treatment: 0hr estrogen alone
+Sample 1: GSM7933149 (SRX22737852): A375 WT sub biol rep1
 
-Sample 2: GSM7984518 (SRX22974824) cell line: MCF7 treatment: 0hr estrogen alone
+Sample 2: GSM7933150 (SRX22737853): A375 WT sub biol rep2
 
-Sample 3: GSM7984519 (SRX22974825) cell line: MCF7 treatment: 0hr estrogen CAF 48hr
+Sample 3: GSM7933156 (SRX22737858): SHSY5Y WT sub biol rep1
 
-Sample 4: GSM7984520 (SRX22974826) cell line: MCF7 treatment: 0hr estrogen CAF 48hr
+Sample 4: GSM7933157 (SRX22737859): SHSY5Y WT sub biol rep2
 
-Sample 5: GSM7984521 (SRX22974827) cell line: MCF7 treatment: 6hr estrogen alone
+Sample 5: GSM7933161 (SRX22737864): HEK293WT sub biol rep1
 
-Sample 6: GSM7984522 (SRX22974828) cell line: MCF7 treatment: 6hr estrogen alone
-
-Sample 7: GSM7984523 (SRX22974829) cell line: MCF7 treatment: 6hr estrogen CAF 48hr
-
-Sample 8: GSM7984524 (SRX22974830) cell line: MCF7 treatment: 6hr estrogen CAF 48hr
+Sample 6: GSM7933162 (SRX22737865): HEK293WT sub biol rep1
 
 Reference files:
 
