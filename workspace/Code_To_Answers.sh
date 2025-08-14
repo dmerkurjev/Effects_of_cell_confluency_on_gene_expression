@@ -6,7 +6,7 @@ Answers to questions path, please run full script succesfully first to run those
 
 # q1: How many sequencing lanes were concatenated to form sample A375?
 # If you later generate a manifest upstream, read it here instead of hardcoding
-sample_lanes <- c(A375ep1 = 2L, A375rep2 = 2L, T0hrCAFrep1 = 2L, T0hrCAFrep2 = 2L, T6hrrep1 = 2L, T6hrrep2 = 2L, T6hrCAFrep1 = 2L, T6hrCAFrep2 = 2L)
+sample_lanes <- c(A375ep1 = 1L, A375rep2 = 1L, T0hrCAFrep1 = 1L, T0hrCAFrep2 = 1L, T6hrrep1 = 1L, T6hrrep2 = 1L, T6hrCAFrep1 = 1L, T6hrCAFrep2 = 1L)
 ans_q1 <- unname(sample_lanes["ym"])
 
 # q2: What is the library size (total read counts) for SHSY5Yrep1??
