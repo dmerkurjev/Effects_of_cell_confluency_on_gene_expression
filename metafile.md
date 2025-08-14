@@ -5,9 +5,9 @@
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 paper_title:  Cancer-associated fibroblasts rewire the estrogen receptor response in luminal breast cancer
-journal: Cell Genomics\
-publication_date: "2024-07-5"\
+\f0\fs24 \cf0 paper_title:  Integrative transcriptomic and proteomic profiling of the effects of cell confluency on gene expression
+journal: Sci Data\
+publication_date: "2024-12-6"\
 doi: 10.1038/s41388-024-02973-x\
 series_accession: GSE251644\
 bioproject: PRJNA1055006\
