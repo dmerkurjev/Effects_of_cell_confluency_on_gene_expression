@@ -23,7 +23,7 @@ up_rank <- res_df %>%
   dplyr::arrange(dplyr::desc(log2FoldChange), padj, pvalue)
 ans_q5 <- if (nrow(up_rank) >= 1) up_rank$SYMBOL[3] else NA_character_
 
-# q5: Which gene is ranked 8th by log2 fold change (most upregulated) in SHSY5Y vs. HEK293?
+# q5: Which gene is ranked 8th by log2 fold change (most upregulated) in AT375 vs. HEK293?
 res_df$SYMBOL <- rownames(res_df)
 up_rank <- res_df %>%
   dplyr::filter(!is.na(log2FoldChange) & log2FoldChange > 0) %>%
