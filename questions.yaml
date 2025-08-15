@@ -40,6 +40,6 @@ questions:\
 \
   - id: q5\
     stage: differential_expression\
-    text: "Which gene is ranked 3th by log2 fold change (most upregulated) in SHSY5Y vs. HEK293?"\
+    text: "Which gene is ranked 3th by log2 fold change (most upregulated) in A375 vs. HEK293?"\
     answer_type: string_exact}
 \
